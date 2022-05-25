@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Youtube PiP</title>
+  <link rel="stylesheet" href="css/index.css" />
+</head>
+
+<body>
+
+  <iframe id="player" title="YouTube video player" frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen></iframe>
+  <script src="webjs/main.js"></script>
+
+  <div id="drag-area"></div>
+
+  <div id="app-menu">
+    <div class="menu">
+      <svg viewBox="0 0 24 24" id="close-menu">
+        <path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z">
+        </path>
+      </svg>
+      <div>
+        <h1>Youtube PiP</h1>
+      </div>
+      <div>
+        <div class="row">
+          <button id="select-video">Select video from YouTube</button>
+        </div>
+      </div>
+      <form onsubmit="submitGo(event)">
+        <div class="row">
+          <input type="url" id="url-input" placeholder="Youtube video url" />
+          <button type="submit">GO</button>
+        </div>
+      </form>
+      <div>
+        <input type="range" min="10" max="100" value="100" class="slider" id="opacity">
+      </div>
+      <a id="clipboard-video" class="no-display">
+        <img id="clipboard-video-image" src="" />
+        <div id="clipboard-video-info">
+          <h2 id="clipboard-video-title"></h2>
+          <p id="clipboard-video-author"></p>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <div id="contextmenu" class="no-display">
+    <button onclick="pasteClip()">PASTE</button>
+  </div>
+
+  <div id="window-menu">
+    <button id="click-throught" onclick="clickThrought()">
+      Click throught
+    </button>
+    <button onclick="minimize()" class="button">
+      <svg viewBox="0 0 24 24">
+        <path shape-rendering="crispEdges" d="M6 11h12v2H6z"></path>
+      </svg>
+    </button>
+    <button onclick="toggleMenu()" class="button">
+      <svg viewBox="0 0 24 24">
+        <path shape-rendering="crispEdges" d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>
+      </svg>
+    </button>
+    <button onclick="closeWindow()" class="button">
+      <svg viewBox="0 0 24 24">
+        <path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z">
+        </path>
+      </svg>
+    </button>
+  </div>
+
+</body>
+
+</html>

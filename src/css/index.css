@@ -1,0 +1,234 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif;
+  overflow: hidden;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  user-select: none;
+  outline: none;
+}
+
+#player {
+  width: 100vw;
+  height: 100vh;
+}
+
+#drag-area {
+  max-height: 300px;
+  height: 25vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  -webkit-app-region: drag;
+}
+
+#window-menu {
+  position: fixed;
+  width: 303px;
+  height: 34px;
+  display: grid;
+  grid-template-columns: 4fr 1fr 1fr 1fr;
+  align-content: center;
+  justify-content: center;
+  background-color: #282828;
+  top: 0;
+  right: 0;
+  -webkit-app-region: no-drag;
+  box-shadow: 0px 2px 6px -1px rgba(0, 0, 0, 0.3);
+}
+
+.opacity-0 {
+  opacity: 0;
+}
+
+.no-display {
+  display: none !important;
+}
+
+#window-menu:hover {
+  opacity: 1;
+}
+
+#window-menu .button {
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: none;
+  padding: 8px;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+#window-menu .button:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+#window-menu .button path {
+  fill: white;
+}
+
+#app-menu {
+  -webkit-app-region: drag;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.4);
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  width: 100vw;
+  height: 100vh;
+}
+
+#app-menu .menu {
+  -webkit-app-region: no-drag;
+  max-width: 450px;
+  width: calc(100vw - 40px);
+  width: auto;
+  background-color: #282828;
+  color: white;
+  border-radius: 6px;
+  box-shadow: 0px 2px 6px -1px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  display: grid;
+  gap: 10px;
+  position: relative;
+  padding-top: 10px;
+  overflow: hidden;
+}
+
+#app-menu .menu input {
+  border: none;
+  border-bottom: 2px solid #666;
+  padding: 4px 2px;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  background-color: transparent;
+}
+
+.row {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 10px;
+}
+
+button {
+  background-color: #212121;
+  border: none;
+  padding: 6px 16px;
+  border-radius: 2px;
+  box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0 / 20%);
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#close-menu {
+  box-sizing: content-box;
+  height: 26px;
+  width: 26px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 8px;
+  cursor: pointer;
+}
+
+#close-menu:hover {
+  background-color: #212121;
+}
+
+#close-menu path {
+  fill: white;
+}
+
+h1 {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+#clipboard-video {
+  border: 1px solid #666;
+  border-radius: 4px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+#clipboard-video:hover {
+  background-color: #666;
+}
+
+#clipboard-video-info {
+  padding: 6px;
+  overflow: hidden;
+}
+
+#clipboard-video-info p {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+
+#clipboard-video-title {
+  font-weight: 500;
+  font-size: 17px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+#clipboard-video-image {
+  height: 55px;
+}
+
+#contextmenu {
+  -webkit-app-region: no-drag;
+  position: fixed;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 8px;
+  border-radius: 5px;  
+  background-color: #666!important;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+  border: none!important;
+  padding: -10px!important;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%; 
+  background: #2196f3;
+  background: #212121;
+  cursor: pointer;
+  box-shadow: 0px 2px 6px -1px rgba(0, 0, 0, 0.3);
+  margin: 5px;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #2196f3;
+  cursor: pointer;
+}
